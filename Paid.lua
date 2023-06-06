@@ -16,6 +16,9 @@ local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/miroe
     window:Toggle("Farm Hostage", false, function(bool)
         _G.FarmHos = bool
     end)
+    window2:Button("Reset Character", function()
+        game.Players.LocalPlayer.Character.Humanoid.Health = 0
+    end)
     window2:Toggle("Saft Mode", false, function(bool)
         _G.Saft = bool
     end)
@@ -50,5 +53,72 @@ local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/miroe
                     end
                 end
             end)
+        end
+    end)
+    spawn(function()
+        while wait() do
+            wait()
+            if _G.FarmBou == true then
+                for i,v in pairs(game:GetService("Workspace").Game.Characters:GetDescendants()) do
+                    if v.Name == "Villain" and v:FindFirstChild("AI") and v.Humanoid.Health < 7500 then
+                        v.Humanoid.Health = 0
+                    end
+                end
+            end
+        end
+    end)
+    spawn(function()
+        while wait() do
+            wait()
+            pcall(function()
+                if _G.FarmBou == true then
+                    if game:GetService("Workspace").Game.Characters:FindFirstChild("Villain") then
+                        for i,v in pairs(game:GetService("Workspace").Game.Characters:GetDescendants()) do
+                            if v.Name == "Villain" and v:FindFirstChild("AI") and v.Humanoid.Health > 0 then
+                                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame * CFrame.new(0,0,2.5)
+                            end
+                        end
+                    else
+                        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Game.Map.InteractableNPCS["Hero Association Recruiter"].HumanoidRootPart.CFrame * CFrame.new(0,0,2)
+                        wait(0.1)
+                        fireproximityprompt(game:GetService("Workspace").Game.Map.InteractableNPCS["Hero Association Recruiter"].HumanoidRootPart.ProximityPrompt)
+                    end
+                end
+            end)
+        end
+    end)
+    spawn(function()
+        while wait() do
+            wait()
+            pcall(function()
+                if _G.FarmBou == true then
+                    if game:GetService("Workspace").Game.Characters:FindFirstChild("Villain") then
+                        local ohString1 = "Punch"
+                        game:GetService("Players").LocalPlayer.Backpack.Client.re:FireServer(ohString1)
+                    end
+                end
+            end)
+        end
+    end)
+    spawn(function()
+        while wait() do
+            wait()
+            if _G.FarmHos == true then
+                pcall(function()
+                    if game:GetService("Players").LocalPlayer.PlayerGui.Quests.Quests.QuestTemplate.Visible == true and game:GetService("Players").LocalPlayer.PlayerGui.Quests.Quests.QuestTemplate.Main.Title.Text == "Hostage Incident" then
+                        for i,v in pairs(game:GetService("Workspace").Game.Characters.hostages:GetDescendants()) do
+                            if string.find(v.Name,"Hostage") and v:FindFirstChild("AI") then
+                                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame * CFrame.new(0,0,2.5)
+                                wait(0.1)
+                                fireproximityprompt(v.HumanoidRootPart.unhostage)
+                            end
+                        end
+                    else
+                        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Game.Map.InteractableNPCS["Domen Eiko"].HumanoidRootPart.CFrame * CFrame.new(0,0,-2)
+                        wait(0.1)
+                        fireproximityprompt(game:GetService("Workspace").Game.Map.InteractableNPCS["Domen Eiko"].HumanoidRootPart.ProximityPrompt)
+                    end
+                end)
+            end
         end
     end)
