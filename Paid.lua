@@ -1,5 +1,5 @@
 local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/miroeramaa/TurtleLib/main/TurtleUiLib.lua"))()
-    local window = library:Window("Main*")
+    local window = library:Window("Main")
     local window2 = library:Window("Misc")
     window:Toggle("Farm Bounty", false, function(bool)
         if game.Players.LocalPlayer.Stats.Rep.Value >= 100000 then
@@ -22,13 +22,19 @@ local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/miroe
     window2:Toggle("Saft Mode", false, function(bool)
         _G.Saft = bool
     end)
+    window:Slider("Min Health",0,10000,0, function(value)
+        _G.Min = value
+    end)
+    window:Slider("Max Health",0,10000,0, function(value)
+        _G.Max = value
+    end)
     window:Label("Credits to GZE450#6591", Color3.fromRGB(127, 143, 166))
     window2:Label("Credits to GZE450#6591", Color3.fromRGB(127, 143, 166))
     spawn(function()
         while wait() do
             pcall(function()
                 if _G.Saft then
-                    if game:GetService("Players").LocalPlayer.Character.Humanoid.Health <= 5000 then
+                    if game:GetService("Players").LocalPlayer.Character.Humanoid.Health <= _G.Min then
                         local savedpos = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
                         wait()
                         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0, -200, 0)
@@ -45,7 +51,7 @@ local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/miroe
                         wait()
                         Seat.CFrame = savedpos
                         return false
-                    elseif game:GetService("Players").LocalPlayer.Character.Humanoid.Health >= 6000 then
+                    elseif game:GetService("Players").LocalPlayer.Character.Humanoid.Health >= _G.Max then
                         workspace:FindFirstChild('invischair'):Remove()
                         return false
                     else
