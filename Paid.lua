@@ -19,6 +19,9 @@ local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/miroe
     window2:Button("Reset Character", function()
         game.Players.LocalPlayer.Character.Humanoid.Health = 0
     end)
+    window2:Toggle("Instant Kill", false, function(bool)
+        _G.INSTANT = bool
+    end)
     window2:Toggle("Saft Mode", false, function(bool)
         _G.Saft = bool
     end)
@@ -128,3 +131,181 @@ local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/miroe
             end
         end
     end)
+    -----------------------------------------------------------------------------------------------------
+    spawn(function()
+        while wait() do
+            if _G.INSTANT == true then
+                for i,v in pairs(game.Workspace.Game.Characters:GetDescendants()) do
+                    if v.Name == "Villain" and v:FindFirstChild("AI") and v.Humanoid.Health <= 7500 then
+                        v.Humanoid.Health = 0
+                    end 
+                end
+            end
+        end
+    end)
+    spawn(function()
+        while wait() do
+            if _G.INSTANT == true then
+                for i,v in pairs(game.Workspace.Game.Characters:GetDescendants()) do
+                    if v.Name == "Bald Tanktop" and v:FindFirstChild("AI") and v.Humanoid.Health < 2500 then
+                        v.Humanoid.Health = 0
+                    end 
+                end
+            end
+        end
+    end)
+    spawn(function()
+        while wait() do
+            if _G.INSTANT == true then
+                for i,v in pairs(game.Workspace.Game.Characters:GetDescendants()) do
+                    if v.Name == "Bandit" and v:FindFirstChild("AI") and v.Humanoid.Health < 100 then
+                        v.Humanoid.Health = 0
+                    end 
+                end
+            end
+        end
+    end)
+    spawn(function()
+        while wait() do
+            if _G.INSTANT == true then
+                for i,v in pairs(game.Workspace.Game.Characters:GetDescendants()) do
+                    if v.Name == "Bike Rider" and v:FindFirstChild("AI") and v.Humanoid.Health < 500 then
+                        v.Humanoid.Health = 0
+                    end 
+                end
+            end
+        end
+    end)
+    spawn(function()
+        while wait() do
+            if _G.INSTANT == true then
+                for i,v in pairs(game.Workspace.Game.Characters:GetDescendants()) do
+                    if v.Name == "Demon Cyborg" and v:FindFirstChild("AI") and v.Humanoid.Health < 850 then
+                        v.Humanoid.Health = 0
+                    end 
+                end
+            end
+        end
+    end)
+    spawn(function()
+        while wait() do
+            if _G.INSTANT == true then
+                for i,v in pairs(game.Workspace.Game.Characters:GetDescendants()) do
+                    if v.Name == "Hammer Head" and v:FindFirstChild("AI") and v.Humanoid.Health < 500 then
+                        v.Humanoid.Health = 0
+                    end 
+                end
+            end
+        end
+    end)
+    spawn(function()
+        while wait() do
+            if _G.INSTANT == true then
+                for i,v in pairs(game.Workspace.Game.Characters:GetDescendants()) do
+                    if v.Name == "Jeff The Stealer" and v:FindFirstChild("AI") and v.Humanoid.Health < 100 then
+                        v.Humanoid.Health = 0
+                    end 
+                end
+            end
+        end
+    end)
+    spawn(function()
+        while wait() do
+            if _G.INSTANT == true then
+                for i,v in pairs(game.Workspace.Game.Characters:GetDescendants()) do
+                    if v.Name == "Ocean Lord" and v:FindFirstChild("AI") and v.Humanoid.Health < 850 then
+                        v.Humanoid.Health = 0
+                    end 
+                end
+            end
+        end
+    end)
+    spawn(function()
+        while wait() do
+            if _G.INSTANT == true then
+                for i,v in pairs(game.Workspace.Game.Characters:GetDescendants()) do
+                    if v.Name == "Police Officer" and v:FindFirstChild("AI") and v.Humanoid.Health < 220 then
+                        v.Humanoid.Health = 0
+                    end 
+                end
+            end
+        end
+    end)
+    spawn(function()
+        while wait() do
+            if _G.INSTANT == true then
+                for i,v in pairs(game.Workspace.Game.Characters:GetDescendants()) do
+                    if v.Name == "Strong Bandit" and v:FindFirstChild("AI") and v.Humanoid.Health < 250 then
+                        v.Humanoid.Health = 0
+                    end 
+                end
+            end
+        end
+    end)
+    spawn(function()
+        while wait() do
+            if _G.INSTANT == true then
+                for i,v in pairs(game.Workspace.Game.Characters:GetDescendants()) do
+                    if v.Name == "Vaccine Man" and v:FindFirstChild("AI") and v.Humanoid.Health < 2500 then
+                        v.Humanoid.Health = 0
+                    end 
+                end
+            end
+        end
+    end)
+    spawn(function()
+        while wait() do
+            if _G.INSTANT == true then
+                for i,v in pairs(game.Workspace.Game.Characters:GetDescendants()) do
+                    if v.Name == "Weak Hero" and v:FindFirstChild("AI") and v.Humanoid.Health < 450 then
+                        v.Humanoid.Health = 0
+                    end 
+                end
+            end
+        end
+    end)
+    spawn(function()
+        while wait() do
+            if _G.INSTANT == true then
+                for i,v in pairs(game.Workspace.Game.Characters:GetDescendants()) do
+                    if v.Name == "Weak Monster" and v:FindFirstChild("AI") and v.Humanoid.Health < 450 then
+                        v.Humanoid.Health = 0
+                    end 
+                end
+            end
+        end
+    end)
+    spawn(function()
+        while wait() do
+            if _G.INSTANT == true then
+                for i,v in pairs(game.Workspace.Game.Characters:GetDescendants()) do
+                    if v.Name == "Kabuto" and v:FindFirstChild("AI") and v.Humanoid.Health < 10000 then
+                        v.Humanoid.Health = 0
+                    end 
+                end
+            end
+        end
+    end)
+    spawn(function()
+        while wait() do
+            if _G.INSTANT == true then
+                for i,v in pairs(game.Workspace.Game.Characters:GetDescendants()) do
+                    if v.Name == "MetalKnight" and v:FindFirstChild("AI") and v.Humanoid.Health < 20000 then
+                        v.Humanoid.Health = 0
+                    end 
+                end
+            end
+        end
+    end)
+    spawn(function()
+        while wait() do
+            if _G.INSTANT == true then
+                for i,v in pairs(game.Workspace.Game.Characters:GetDescendants()) do
+                    if v.Name == "Hero" and v:FindFirstChild("AI") and v.Humanoid.Health <= 7500 then
+                        v.Humanoid.Health = 0
+                    end 
+                end
+            end
+        end
+    end)
+    -----------------------------------------------------------------------------------------------------
