@@ -22,10 +22,10 @@ local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/miroe
     window2:Toggle("Saft Mode", false, function(bool)
         _G.Saft = bool
     end)
-    window:Slider("Min Health",0,10000,0, function(value)
+    window2:Slider("Min Health",0,10000,0, function(value)
         _G.Min = value
     end)
-    window:Slider("Max Health",0,10000,0, function(value)
+    window2:Slider("Max Health",0,10000,0, function(value)
         _G.Max = value
     end)
     window:Label("Credits to GZE450#6591", Color3.fromRGB(127, 143, 166))
