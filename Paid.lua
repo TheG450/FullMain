@@ -19,7 +19,7 @@ local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/miroe
     window2:Button("Reset Character", function()
         game.Players.LocalPlayer.Character.Humanoid.Health = 0
     end)
-    window2:Toggle("Instant Kill", false, function(bool)
+    window2:Toggle("Instant Kill(Mini Lag)", false, function(bool)
         _G.INSTANT = bool
     end)
     window2:Toggle("Saft Mode", false, function(bool)
