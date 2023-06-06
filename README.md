@@ -1,0 +1,2 @@
+# FullMain
+Script For Paid
