@@ -8,7 +8,11 @@ local Hwide = string.split((ClientId),'-')
 local Key = Hwide[1]..Hwide[5]
 if _G.Key == Key or _G.Key == "SuperAdminTheG" then
     if hwid[_G.Key] == game:GetService("RbxAnalyticsService"):GetClientId() or "SuperAdminTheG" then
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/TheG450/MakeItsPaidVIP/main/Paid.lua"))()
+	if game.PlaceId == 11481193418 then
+        	loadstring(game:HttpGet("https://raw.githubusercontent.com/TheG450/MakeItsPaidVIP/main/Paid.lua"))()
+	else
+		game.Players.LocalPlayer:Kick("Wrong Maps!!!")	
+	end
     else
         game.Players.LocalPlayer:Kick("Wrong HWID!!!")
     end
