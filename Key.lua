@@ -1,20 +1,18 @@
 repeat wait(3) until game:IsLoaded()
-local key = _G.Key
-local keys = {"2B4B62-506553-68566D-597133-743677-39GZ" == nil, 
-    "347437-77217A-25432A-462D4A-614E64-52GZ" == nil, 
-    "6E5A72-347537-782141-25442A-472D4B-61GZ" == nil
-
+local hwid = {
+    ["D9DC421587048D0417A9"] = "D9DC4215-EE09-4AB9-94F8-87048D0417A9"
 }
-if game:GetService("Players").LocalPlayer.Name == "GZM450" then
-    if game.PlaceId == 11481193418 then
-        if table.find(keys, key) then
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/TheG450/MakeItsPaidVIP/main/Paid.lua"))()
-        else
-            game:GetService("Players").LocalPlayer:Kick("Wrong Key!!!")
-        end
+local ClientId = game:GetService("RbxAnalyticsService"):GetClientId()
+local Hwide = string.split((ClientId),'-')
+local Key = Hwide[1]..Hwide[5]
+if _G.Key == Key or _G.Key == "SuperAdminTheG" then
+    if hwid[_G.Key] == game:GetService("RbxAnalyticsService"):GetClientId() or "SuperAdminTheG" then
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/TheG450/MakeItsPaidVIP/main/Paid.lua"))()
     else
-        game:GetService("Players").LocalPlayer:Kick("Wrong Map!!!")
+        game.Players.LocalPlayer:Kick("Wrong HWID!!!")
     end
+elseif hwid[_G.Key] == "" or _G.Key == "" then
+	game.Players.LocalPlayer:Kick("Your HWID:  "..ClientId.."     Send to Admin")
 else
-    game:GetService("Players").LocalPlayer:Kick("Wrong Player!!!")
+    game.Players.LocalPlayer:Kick("Wrong Key!!!")
 end
